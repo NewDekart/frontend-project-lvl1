@@ -1,0 +1,33 @@
+{
+  "name": "frontend-project-lvl1",
+  "version": "1.0.0",
+  "description": "newdekart-hexlet-project-one",
+  "main": "index.js",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NewDekart/frontend-project-lvl1.git"
+  },
+  "author": "newdekart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NewDekart/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/NewDekart/frontend-project-lvl1#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/node": "^7.8.3",
+    "@babel/preset-env": "^7.8.3"
+  }
+}
