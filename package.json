@@ -4,7 +4,8 @@
   "description": "newdekart-hexlet-project-one",
   "main": "index.js",
   "bin": {
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "files": [
     "dist"
@@ -36,6 +37,7 @@
     "eslint-plugin-import": "^2.20.0"
   },
   "dependencies": {
+    "@hexlet/pairs": "^1.0.10",
     "lodash": "^4.17.15",
     "readline-sync": "^1.4.10"
   }
