@@ -1,5 +1,5 @@
-import random from 'lodash/random';
 import { cons } from '@hexlet/pairs';
+import random from '../tools/dekartTools';
 
 export default () => {
   const delimeter = 2;
