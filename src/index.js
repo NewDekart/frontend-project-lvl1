@@ -2,11 +2,14 @@ import readlineSync from 'readline-sync';
 import { car, cdr, cons } from '@hexlet/pairs';
 import evenGame from './games/brain-even';
 import calcGame from './games/brain-calc';
+import gcdGame from './games/brain-gcd';
 
 const chooseGame = (name) => {
   switch (name) {
     case 'brain-calc':
       return cons('What is the result of the expression?', calcGame);
+    case 'brain-gcd':
+      return cons('Find the greatest common divisor of given numbers.', gcdGame);
     default:
       return cons('Answer "yes" if the number is even, otherwise answer "no".', evenGame);
   }
