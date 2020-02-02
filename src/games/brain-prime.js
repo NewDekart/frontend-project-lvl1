@@ -1,16 +1,15 @@
 import { cons } from '@hexlet/pairs';
-import { random } from '../tools/dekartTools';
+import { random, isPrime } from '../tools/dekartTools';
 
 const game = () => {
-  const delimeter = 2;
   const number = random(100);
-  const correctValue = number % delimeter === 0 ? 'yes' : 'no';
+  const correctValue = isPrime(number) ? 'yes' : 'no';
   const question = `${number}`;
 
   return cons(question, correctValue);
 };
 
 export default () => {
-  const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const rules = 'Answer "yes" if the number is prime, otherwise answer "no".';
   return cons(rules, game);
 };

@@ -1,5 +1,5 @@
 import { cons } from '@hexlet/pairs';
-import random from '../tools/dekartTools';
+import { random } from '../tools/dekartTools';
 
 const game = () => {
   const lengthOfProgr = 10;

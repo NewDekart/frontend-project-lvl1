@@ -1,5 +1,5 @@
 import { cons, car, cdr } from '@hexlet/pairs';
-import random from '../tools/dekartTools';
+import { random } from '../tools/dekartTools';
 
 const getExpr = (val1, val2) => {
   const operatorNum = random(2);
