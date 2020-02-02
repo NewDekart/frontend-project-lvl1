@@ -1,7 +1,7 @@
 import { cons } from '@hexlet/pairs';
 import random from '../tools/dekartTools';
 
-export default () => {
+const game = () => {
   const firstNum = random(100);
   const secondNum = random(100);
   const origDiv = Math.max(firstNum, secondNum);
@@ -18,5 +18,10 @@ export default () => {
 
   const correctValue = iter(origDiv, origDel);
 
-  return cons(question, correctValue);
+  return cons(question, String(correctValue));
+};
+
+export default () => {
+  const rules = 'Find the greatest common divisor of given numbers.';
+  return cons(rules, game);
 };

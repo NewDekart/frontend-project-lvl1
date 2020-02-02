@@ -9,4 +9,4 @@ lint:
 test:
 	make publish
 	sudo npm link
-	make start
+
