@@ -10,3 +10,15 @@ npm install --save new-dekart-brain-games
 
 ## brain-even
 ![](./asciinema/gif/even.gif)
+
+## brain-calc
+![](./asciinema/gif/calc.gif)
+
+## brain-gcd
+![](./asciinema/gif/gcd.gif)
+
+## brain-progression
+![](./asciinema/gif/progression.gif)
+
+## brain-prime
+![](./asciinema/gif/even.gif)
