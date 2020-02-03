@@ -9,4 +9,4 @@ npm install --save new-dekart-brain-games
 ```
 
 ## brain-even
-[![asciicast](https://asciinema.org/a/YQtFEK4wBBFNPzt3ZJJANeXTh.svg)](https://asciinema.org/a/YQtFEK4wBBFNPzt3ZJJANeXTh)
+![](./asciinema/gifs/even.gif)
