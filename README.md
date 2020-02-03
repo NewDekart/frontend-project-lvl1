@@ -5,5 +5,9 @@
 ## Install
 
 ```sh
-npm install new-dekart-brain-games -g
+npm install --save new-dekart-brain-games
 ```
+
+## brain-even
+
+[![asciicast](https://asciinema.org/a/96e5HyULKjqurj3xlDGok7XyC.png)](https://asciinema.org/a/96e5HyULKjqurj3xlDGok7XyC)
