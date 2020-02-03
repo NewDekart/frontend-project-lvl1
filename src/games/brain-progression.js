@@ -7,6 +7,7 @@ const game = () => {
   const firstElem = random(100);
   const positionToHide = random(lengthOfProgr - 1);
   const correctValue = stepOfProgr * positionToHide + firstElem;
+  const elemToShowFirst = positionToHide === 0 ? '..' : firstElem;
 
   const arrayFill = (array, i, previousElem) => {
     if (array.length === lengthOfProgr) return array;
@@ -22,7 +23,7 @@ const game = () => {
     return arrayFill(array, i + 1, nextElem);
   };
 
-  const question = arrayFill([firstElem], 1, firstElem).join(' ');
+  const question = arrayFill([elemToShowFirst], 1, firstElem).join(' ');
 
   return cons(question, String(correctValue));
 };

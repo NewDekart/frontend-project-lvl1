@@ -2,7 +2,7 @@ import { cons } from '@hexlet/pairs';
 import { random, gcd } from '../tools/dekartTools';
 
 const game = () => {
-  const firstNum = random(100);
+  const firstNum = random(1, 100);
   const secondNum = random(100);
   const origDiv = Math.max(firstNum, secondNum);
   const origDel = Math.min(firstNum, secondNum);
