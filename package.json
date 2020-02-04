@@ -1,6 +1,6 @@
 {
   "name": "new-dekart-brain-games",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "games-for-hexlet-project-one",
   "main": "index.js",
   "bin": {
