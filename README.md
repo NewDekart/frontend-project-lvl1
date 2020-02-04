@@ -3,10 +3,7 @@
 [![Build Status](https://travis-ci.org/NewDekart/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/NewDekart/frontend-project-lvl1)
 
 ## Install
-
-```sh
-npm install --save new-dekart-brain-games
-```
+![](./asciinema/gif/install.gif)
 
 ## brain-even
 ![](./asciinema/gif/even.gif)
@@ -22,3 +19,6 @@ npm install --save new-dekart-brain-games
 
 ## brain-prime
 ![](./asciinema/gif/even.gif)
+
+## fail-demo
+![](./asciinema/gif/fail.gif)
