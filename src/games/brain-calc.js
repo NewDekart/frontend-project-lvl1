@@ -17,8 +17,10 @@ const getExpr = (val1, val2) => {
       return cons(operator, val1 * val2);
     case '+':
       return cons(operator, val1 + val2);
-    default:
+    case '-':
       return cons(operator, val1 - val2);
+    default:
+      return null;
   }
 };
 
