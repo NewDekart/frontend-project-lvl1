@@ -1,18 +1,20 @@
 import { cons } from '@hexlet/pairs';
-import { random } from '../tools/dekartTools';
+import random from '../tools/random';
+
+const rules = 'What number is missing in the progression?';
 
 const game = () => {
   const lengthOfProgr = 10;
-  const stepOfProgr = random(100);
-  const firstElem = random(100);
+  const stepOfProgr = random(1, 100);
+  const firstElem = random(0, 100);
   const positionToHide = random(lengthOfProgr - 1);
   const correctValue = stepOfProgr * positionToHide + firstElem;
   const elemToShowFirst = positionToHide === 0 ? '..' : firstElem;
 
-  const arrayFill = (array, i, previousElem) => {
+  const arrayFill = (array, i) => {
     if (array.length === lengthOfProgr) return array;
 
-    const nextElem = previousElem + stepOfProgr;
+    const nextElem = stepOfProgr * i + firstElem;
 
     if (i === positionToHide) {
       array.push('..');
@@ -20,15 +22,12 @@ const game = () => {
       array.push(nextElem);
     }
 
-    return arrayFill(array, i + 1, nextElem);
+    return arrayFill(array, i + 1);
   };
 
-  const question = arrayFill([elemToShowFirst], 1, firstElem).join(' ');
+  const question = arrayFill([elemToShowFirst], 1).join(' ');
 
   return cons(question, String(correctValue));
 };
 
-export default () => {
-  const rules = 'What number is missing in the progression?';
-  return cons(rules, game);
-};
+export default () => cons(rules, game);
