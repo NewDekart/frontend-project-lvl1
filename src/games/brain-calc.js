@@ -1,37 +1,38 @@
 import { cons, car, cdr } from '@hexlet/pairs';
 import random from '../tools/random';
+import startGame from '..';
 
-const rules = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 const possibleOperators = ['*', '+', '-'];
 
-const getArrayRandElem = (array) => {
-  const randIndex = random(0, array.length - 1);
-
-  return array[randIndex];
+const getRandOperator = (operators) => {
+  const randIndex = random(0, operators.length - 1);
+  return operators[randIndex];
 };
 
-const getExpr = (val1, val2) => {
-  const operator = getArrayRandElem(possibleOperators);
+const getExpr = (firstValue, secondValue, operator) => {
   switch (operator) {
     case '*':
-      return cons(operator, val1 * val2);
+      return cons(operator, firstValue * secondValue);
     case '+':
-      return cons(operator, val1 + val2);
+      return cons(operator, firstValue + secondValue);
     case '-':
-      return cons(operator, val1 - val2);
+      return cons(operator, firstValue - secondValue);
     default:
       return null;
   }
 };
 
-const game = () => {
+const getRoundInfo = () => {
   const firstNum = random(0, 100);
   const secondNum = random(0, 100);
-  const resultExpr = getExpr(firstNum, secondNum);
+  const operator = getRandOperator(possibleOperators);
+  const resultExpr = getExpr(firstNum, secondNum, operator);
   const question = `${firstNum} ${car(resultExpr)} ${secondNum}`;
   const correctValue = cdr(resultExpr);
 
   return cons(question, String(correctValue));
 };
 
-export default () => cons(rules, game);
+const gameInfo = cons(description, getRoundInfo);
+export default () => (startGame(gameInfo));

@@ -1,21 +1,22 @@
 import { cons } from '@hexlet/pairs';
 import random from '../tools/random';
+import startGame from '..';
 
-const rules = 'Answer "yes" if the number is prime, otherwise answer "no".';
+const description = 'Answer "yes" if the number is prime, otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num < 2) return false;
-  const iter = (rem) => {
+  const startIteration = (rem) => {
     if (rem === num) return true;
     if (num % rem === 0) return false;
 
-    return iter(rem + 1);
+    return startIteration(rem + 1);
   };
 
-  return iter(2);
+  return startIteration(2);
 };
 
-const game = () => {
+const getRoundInfo = () => {
   const number = random(0, 100);
   const correctValue = isPrime(number) ? 'yes' : 'no';
   const question = `${number}`;
@@ -23,4 +24,5 @@ const game = () => {
   return cons(question, correctValue);
 };
 
-export default () => cons(rules, game);
+const gameInfo = cons(description, getRoundInfo);
+export default () => (startGame(gameInfo));

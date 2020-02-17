@@ -1,7 +1,8 @@
 {
   "name": "new-dekart-brain-games",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "games-for-hexlet-project-one",
+  "keywords": ["hexlet","games","brain-games","brangames","gcd","even","progression","calc","prime"],
   "bin": {
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
@@ -24,7 +25,8 @@
   "author": "newdekart",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NewDekart/frontend-project-lvl1/issues"
+    "url": "https://github.com/NewDekart/frontend-project-lvl1/issues",
+    "email": "new.dekart@yandex.ru"
   },
   "homepage": "https://github.com/NewDekart/frontend-project-lvl1#readme",
   "devDependencies": {

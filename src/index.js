@@ -1,18 +1,13 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from '@hexlet/pairs';
-import brainCalc from './games/brain-calc';
-import brainEven from './games/brain-even';
-import brainGcd from './games/brain-gcd';
-import brainPrime from './games/brain-prime';
-import brainProgression from './games/brain-progression';
 
-const commonGameProcess = (gameInfo) => {
+const startGame = (gameInfo) => {
   console.log('Welcome to the Brain Games!');
   const maxRounds = 3;
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  const gameRules = car(gameInfo);
-  console.log(gameRules);
+  const gameDescription = car(gameInfo);
+  console.log(gameDescription);
 
   const question = (numOfQuest, correct = 'yes', ans = 'yes') => {
     if (correct !== ans) {
@@ -35,10 +30,4 @@ const commonGameProcess = (gameInfo) => {
   return question(1);
 };
 
-const gameConstructor = (game) => () => commonGameProcess(game());
-
-export const startBrainCalc = gameConstructor(brainCalc);
-export const startBrainEven = gameConstructor(brainEven);
-export const startBrainGcd = gameConstructor(brainGcd);
-export const startBrainPrime = gameConstructor(brainPrime);
-export const startBrainProgression = gameConstructor(brainProgression);
+export default startGame;

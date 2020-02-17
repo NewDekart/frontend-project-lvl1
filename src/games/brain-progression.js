@@ -1,33 +1,35 @@
 import { cons } from '@hexlet/pairs';
 import random from '../tools/random';
+import startGame from '..';
 
-const rules = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
+const lengthOfProgr = 10;
 
-const game = () => {
-  const lengthOfProgr = 10;
+const getRoundInfo = () => {
   const stepOfProgr = random(1, 100);
   const firstElem = random(0, 100);
   const positionToHide = random(lengthOfProgr - 1);
   const correctValue = stepOfProgr * positionToHide + firstElem;
   const elemToShowFirst = positionToHide === 0 ? '..' : firstElem;
 
-  const arrayFill = (array, i) => {
-    if (array.length === lengthOfProgr) return array;
+  const fillProgression = (elements, i) => {
+    if (elements.length === lengthOfProgr) return elements;
 
     const nextElem = stepOfProgr * i + firstElem;
 
     if (i === positionToHide) {
-      array.push('..');
+      elements.push('..');
     } else {
-      array.push(nextElem);
+      elements.push(nextElem);
     }
 
-    return arrayFill(array, i + 1);
+    return fillProgression(elements, i + 1);
   };
 
-  const question = arrayFill([elemToShowFirst], 1).join(' ');
+  const question = fillProgression([elemToShowFirst], 1).join(' ');
 
   return cons(question, String(correctValue));
 };
 
-export default () => cons(rules, game);
+const gameInfo = cons(description, getRoundInfo);
+export default () => (startGame(gameInfo));
