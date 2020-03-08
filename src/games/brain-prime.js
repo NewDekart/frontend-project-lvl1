@@ -17,12 +17,10 @@ const isPrime = (num) => {
 };
 
 const getRoundInfo = () => {
-  const number = random(0, 100);
-  const correctValue = isPrime(number) ? 'yes' : 'no';
-  const question = `${number}`;
+  const question = random(0, 100);
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
 
-  return cons(question, correctValue);
+  return cons(question.toString(), correctAnswer);
 };
 
-const gameInfo = cons(description, getRoundInfo);
-export default () => (startGame(gameInfo));
+export default () => (startGame(description, getRoundInfo));

@@ -8,12 +8,10 @@ const delimeter = 2;
 const isEven = (value) => (value % delimeter === 0);
 
 const getRoundInfo = () => {
-  const number = random(0, 100);
-  const correctValue = isEven(number) ? 'yes' : 'no';
-  const question = `${number}`;
+  const question = random(0, 100);
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
 
-  return cons(question, correctValue);
+  return cons(question.toString(), correctAnswer);
 };
 
-const gameInfo = cons(description, getRoundInfo);
-export default () => (startGame(gameInfo));
+export default () => (startGame(description, getRoundInfo));

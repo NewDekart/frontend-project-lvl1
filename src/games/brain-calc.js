@@ -1,4 +1,4 @@
-import { cons, car, cdr } from '@hexlet/pairs';
+import { cons } from '@hexlet/pairs';
 import random from '../tools/random';
 import startGame from '..';
 
@@ -13,11 +13,11 @@ const getRandOperator = (operators) => {
 const getExpr = (firstValue, secondValue, operator) => {
   switch (operator) {
     case '*':
-      return cons(operator, firstValue * secondValue);
+      return firstValue * secondValue;
     case '+':
-      return cons(operator, firstValue + secondValue);
+      return firstValue + secondValue;
     case '-':
-      return cons(operator, firstValue - secondValue);
+      return firstValue - secondValue;
     default:
       return null;
   }
@@ -27,12 +27,10 @@ const getRoundInfo = () => {
   const firstNum = random(0, 100);
   const secondNum = random(0, 100);
   const operator = getRandOperator(possibleOperators);
-  const resultExpr = getExpr(firstNum, secondNum, operator);
-  const question = `${firstNum} ${car(resultExpr)} ${secondNum}`;
-  const correctValue = cdr(resultExpr);
+  const question = `${firstNum} ${operator} ${secondNum}`;
+  const correctAnswer = getExpr(firstNum, secondNum, operator);
 
-  return cons(question, String(correctValue));
+  return cons(question, String(correctAnswer));
 };
 
-const gameInfo = cons(description, getRoundInfo);
-export default () => (startGame(gameInfo));
+export default () => (startGame(description, getRoundInfo));

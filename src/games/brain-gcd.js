@@ -19,10 +19,9 @@ const getRoundInfo = () => {
   const firstNum = random(1, 100);
   const secondNum = random(1, 100);
   const question = `${firstNum} ${secondNum}`;
-  const correctValue = getGCD(firstNum, secondNum);
+  const correctAnswer = getGCD(firstNum, secondNum);
 
-  return cons(question, String(correctValue));
+  return cons(question, String(correctAnswer));
 };
 
-const gameInfo = cons(description, getRoundInfo);
-export default () => (startGame(gameInfo));
+export default () => (startGame(description, getRoundInfo));

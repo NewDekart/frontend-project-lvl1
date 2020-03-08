@@ -2,7 +2,17 @@
   "name": "new-dekart-brain-games",
   "version": "1.0.3",
   "description": "games-for-hexlet-project-one",
-  "keywords": ["hexlet","games","brain-games","brangames","gcd","even","progression","calc","prime"],
+  "keywords": [
+    "hexlet",
+    "games",
+    "brain-games",
+    "brangames",
+    "gcd",
+    "even",
+    "progression",
+    "calc",
+    "prime"
+  ],
   "bin": {
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
