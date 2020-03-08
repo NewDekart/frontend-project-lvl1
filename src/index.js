@@ -9,24 +9,24 @@ const startGame = (gameDescription, getRoundInfo) => {
   console.log(`Hello, ${userName}!`);
   console.log(gameDescription);
 
-  const startRound = (roundNum, correct = 'yes', ans = 'yes') => {
-    if (correct !== ans) {
-      console.log(`'${ans}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${userName}!`);
+  const startRound = (roundNum) => {
+    const roundInfo = getRoundInfo();
+    const userAnswer = readlineSync.question(`Question: ${car(roundInfo)}\nYour answer: `);
+    const correctAnswer = cdr(roundInfo);
+
+    if (correctAnswer !== userAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
       return;
     }
-    if (roundNum > 1) {
-      console.log('Correct!');
-    }
-    if (roundNum > roundsCount) {
+    console.log('Correct!');
+    if (roundNum === roundsCount) {
       console.log(`Congratulations, ${userName}!`);
       return;
     }
 
-    const roundInfo = getRoundInfo();
-    const userAnswer = readlineSync.question(`Question: ${car(roundInfo)}\nYour answer: `);
-
-    startRound(roundNum + 1, cdr(roundInfo), userAnswer);
+    startRound(roundNum + 1);
   };
+
   return startRound(1);
 };
 
