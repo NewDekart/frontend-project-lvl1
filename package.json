@@ -1,12 +1,12 @@
 {
   "name": "new-dekart-brain-games",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "games-for-hexlet-project-one",
   "keywords": [
     "hexlet",
     "games",
     "brain-games",
-    "brangames",
+    "braingames",
     "gcd",
     "even",
     "progression",

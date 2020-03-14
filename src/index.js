@@ -3,31 +3,38 @@ import { car, cdr } from '@hexlet/pairs';
 
 const roundsCount = 3;
 
-const startGame = (gameDescription, getRoundInfo) => {
+const playGame = (gameDescription, getRoundData) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(gameDescription);
+  let isGameEnd = false;
 
-  const startRound = (roundNum) => {
-    const roundInfo = getRoundInfo();
-    const userAnswer = readlineSync.question(`Question: ${car(roundInfo)}\nYour answer: `);
+  const playRound = (roundNum) => {
+    if (isGameEnd) return undefined;
+
+    const roundInfo = getRoundData();
+    console.log(`Question: ${car(roundInfo)}`);
+    const userAnswer = readlineSync.question('Your answer: ');
     const correctAnswer = cdr(roundInfo);
 
     if (correctAnswer !== userAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
-      return;
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      isGameEnd = true;
     }
+
     console.log('Correct!');
+
     if (roundNum === roundsCount) {
       console.log(`Congratulations, ${userName}!`);
-      return;
+      isGameEnd = true;
     }
 
-    startRound(roundNum + 1);
+    return playRound(roundNum + 1);
   };
 
-  return startRound(1);
+  return playRound(1);
 };
 
-export default startGame;
+export default playGame;

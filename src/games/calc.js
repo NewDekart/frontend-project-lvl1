@@ -1,16 +1,11 @@
 import { cons } from '@hexlet/pairs';
 import random from '../tools/random';
-import startGame from '..';
+import playGame from '..';
 
 const description = 'What is the result of the expression?';
-const possibleOperators = ['*', '+', '-'];
+const operators = ['*', '+', '-'];
 
-const getRandOperator = (operators) => {
-  const randIndex = random(0, operators.length - 1);
-  return operators[randIndex];
-};
-
-const getExpr = (firstValue, secondValue, operator) => {
+const calculateExpression = (firstValue, secondValue, operator) => {
   switch (operator) {
     case '*':
       return firstValue * secondValue;
@@ -23,14 +18,14 @@ const getExpr = (firstValue, secondValue, operator) => {
   }
 };
 
-const getRoundInfo = () => {
+const getRoundData = () => {
   const firstNum = random(0, 100);
   const secondNum = random(0, 100);
-  const operator = getRandOperator(possibleOperators);
+  const operator = operators[random(0, operators.length - 1)];
   const question = `${firstNum} ${operator} ${secondNum}`;
-  const correctAnswer = getExpr(firstNum, secondNum, operator);
+  const correctAnswer = calculateExpression(firstNum, secondNum, operator);
 
   return cons(question, String(correctAnswer));
 };
 
-export default () => (startGame(description, getRoundInfo));
+export default () => playGame(description, getRoundData);
