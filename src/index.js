@@ -8,10 +8,12 @@ const playGame = (gameDescription, getRoundData) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(gameDescription);
-  let isGameEnd = false;
 
   const playRound = (roundNum) => {
-    if (isGameEnd) return undefined;
+    if (roundNum === roundsCount) {
+      console.log(`Congratulations, ${userName}!`);
+      return undefined;
+    }
 
     const roundInfo = getRoundData();
     console.log(`Question: ${car(roundInfo)}`);
@@ -21,15 +23,10 @@ const playGame = (gameDescription, getRoundData) => {
     if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
-      isGameEnd = true;
+      return undefined;
     }
 
     console.log('Correct!');
-
-    if (roundNum === roundsCount) {
-      console.log(`Congratulations, ${userName}!`);
-      isGameEnd = true;
-    }
 
     return playRound(roundNum + 1);
   };
