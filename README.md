@@ -1,6 +1,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/b634715e8f32436726d3/maintainability)](https://codeclimate.com/github/NewDekart/frontend-project-lvl1/maintainability)
 [![Build Status](https://travis-ci.org/NewDekart/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/NewDekart/frontend-project-lvl1)
-
+---
 Данная консольная программа содержит в себе 5 консольных мини-игр. В рамках каждой из игр вам будет предложено ответить на 3 вопроса, в случае ошибки игра прекращается.
 ---
 Навигация:
