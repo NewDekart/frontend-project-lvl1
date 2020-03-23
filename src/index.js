@@ -12,7 +12,7 @@ const playGame = (gameDescription, getRoundData) => {
   const playRound = (roundNum) => {
     if (roundNum === roundsCount) {
       console.log(`Congratulations, ${userName}!`);
-      return undefined;
+      return;
     }
 
     const roundInfo = getRoundData();
@@ -23,12 +23,12 @@ const playGame = (gameDescription, getRoundData) => {
     if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
-      return undefined;
+      return;
     }
 
     console.log('Correct!');
 
-    return playRound(roundNum + 1);
+    playRound(roundNum + 1);
   };
 
   return playRound(1);

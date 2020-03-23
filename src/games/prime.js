@@ -7,7 +7,7 @@ const description = 'Answer "yes" if the number is prime, otherwise answer "no".
 const isPrime = (num) => {
   if (num < 2) return false;
   const iter = (rem) => {
-    if (rem === num) return true;
+    if (rem > num / 2) return true;
     if (num % rem === 0) return false;
 
     return iter(rem + 1);
