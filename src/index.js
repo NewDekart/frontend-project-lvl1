@@ -31,7 +31,7 @@ const playGame = (gameDescription, getRoundData) => {
     playRound(roundNum + 1);
   };
 
-  return playRound(1);
+  playRound(0);
 };
 
 export default playGame;
